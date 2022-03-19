@@ -1,0 +1,32 @@
+{
+  "name": "nft-platform",
+  "version": "1.0.0",
+  "description": "A platform for easy minting, buying and selling NFTs",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd contract/nft-contract && ./build.sh && cd ../market-contract && ./build.sh && cd ../..",
+    "dev": "cd contract/out && near deploy nft.plat_form.testnet main.wasm && near deploy market.plat_form.testnet market.wasm && cd ../.. && nodemon src/platform-api.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hexdee/nft-platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hexdee/nft-platform/issues"
+  },
+  "homepage": "https://github.com/Hexdee/nft-platform#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.3.1",
+    "mongoose": "^6.2.0",
+    "near-api-js": "^0.44.2",
+    "nodemon": "^2.0.15"
+  }
+}
